@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random cet-6</title>
+</head>
+<style>
+    *{
+        font-size: 45px;
+        margin: 0%;
+        padding: 0%;
+    }
+    header{
+        height:20%;
+        background-color: aqua;
+        margin: 0%;
+        text-align: center;
+    }
+    main{
+        height: 50%;
+        margin:0% ;
+        background-color: blueviolet;
+    }
+    footer{
+        height: 30%;
+        background-color: darkgoldenrod;
+        margin: 0%;
+        text-align: center;
+    }
+    button{
+        font-size: 2pm;
+    }
+</style>
+<body>
+    <header>
+        random cet-6
+    </header>
+    <main>
+        <p id="en">单词</p>
+        <p id="pr">单词</p>
+        <p id="cn">单词</p>
+        <button id="rand">单词随机</button>
+    </main>
+    <footer>
+        江西科技师范大学曹佳新
+    </footer>
+    <script>
+    let  cet6String='';
+    let randWord= select('button#randWord');
+    randWord.onclick=function(){
+    let arr=cet6String.split('\r\n');
+    let rand = Math.floor(Math.random()*arr.length);
+    let str=arr[rand];
+    let begin=str.indexOf('\t');
+    let end=str.lastIndexOf('\t');
+    let en =str.slice(0,begin);
+    let pr=str.slice(begin+1,end);
+    let cn=str.slice(end+1);
+    select('p#en').textContent=en;
+    select('p#pr').textContent=pr;
+    select('p#cn').textContent=cn;
+}
+    function select(selector){
+    let dom=document.querySelector(selector);
+    return dom;
+}
+let myBody=document.querySelector(selector);
+console.log(myBody)
+myBody.style.height=innerHeight-18+"18px";
+    </script>
+</body>
+</html>
